@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> car details</h1>
+    <hr>
+    <h1>brand name:-  {{obj.cname}}</h1>
+    <h1>Price  :-     {{obj.price}}</h1>
+    <h1>Model :-      {{obj.model}}    </h1>
+    <h1>Variant :-     {{obj.variant}}</h1>
+    <h1>Color :-       {{obj.color}}</h1>
+    <h1>Engine Type:-  {{obj.engine}}</h1>
+
+    <button><a href="{% url 'formapp:readall'  %}">Read</a></button>
+    <button><a href="{% url 'formapp:create'  %}">create</a></button>
+</body>
+</html>

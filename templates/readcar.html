@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <table cellpadding="20" cellspacing="0" border="2">
+        <tr>
+            <th>Brand name</th>
+            <th>Price</th>
+            <th>Model</th>
+            <th>Variant</th>
+            <th>Color</th>
+            <th>Engine type</th>
+            <th>car details</th>
+            <th> update car details </th>
+            <th> Delete</th>
+        </tr>
+        {% for i in obj %}
+        <tr>
+            <td>{{i.cname}}</td>
+            <td>{{i.price}}</td>
+            <td>{{i.model}}</td>
+            <td>{{i.variant}}</td>
+            <td>{{i.color}}</td>
+            <td>{{i.engine}}</td>
+            <td><button><a href="{% url 'formapp:readone' pk=i.id %}">click here</a></button></td>
+            <td><button><a href="{% url 'formapp:updateone'  pk=i.id %}">update</a></button></td>
+            <td><button><a href="{% url 'formapp:delete'  pk=i.id %}">delete</a></button></td>
+        </tr>
+        {% endfor %}
+
+
+
+    </table>
+    <button><a href="{% url 'formapp:create'  %}">create</a></button>
+</body>
+</html>

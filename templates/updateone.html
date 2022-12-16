@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="{% url 'formapp:updateone' pk=obj.id %}" method="post" >
+        {% csrf_token %}
+
+        <label for="cname">car name :</label>
+        <input type="text" id="cname" name="cname" value="{{obj.cname}}">
+        <label for="price">price :</label>
+        <input type="number" id="price"  name="price" value="{{obj.price}}">
+        <label for="model">model</label>
+        <input type="text" id="model" name="model" value="{{obj.model}}">
+        <label for="variant">variant</label>
+        <input type="text" id="variant" name="variant"  value="{{obj.variant}}">
+        <label for="color">color</label>
+        <input type="text" id="color" name="color"  value="{{obj.color}}">
+        <label for="engine">engine</label>
+        <input type="text" id="engine" name="engine" value="{{obj.engine}}">
+
+        <input type="submit" value="update">
+
+    </form>
+    <button><a href="{% url 'formapp:readall'  %}">Read</a></button>
+    <button><a href="{% url 'formapp:create'  %}">create</a></button>
+</body>
+</html>
