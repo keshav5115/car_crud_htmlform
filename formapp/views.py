@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
-from .models import Car
+from .models import Car,Customer
 # Create your views here.
 
 def Carview(request):
@@ -74,3 +74,31 @@ def delete(request,pk):
 
 def sample(request):
     return HttpResponse('data is submited')
+
+
+
+
+#----------------customer view---------------------------------
+
+def customerview(request):
+    if request.method=='POST':
+        print(request.POST)
+        name=request.POST['name']
+        phone=request.POST['phone']
+        English=Kannada=Hindi=Tamil=Telugu=False
+        if 'English' in request.POST:
+            English=True
+        if 'Kannada'  in request.POST:
+            Kannada=True
+        if 'Hindi' in request.POST:
+            Hindi =True
+        if 'Telugu' in request.POST:
+            Telugu =True
+        if 'Tamil' in request.POST:
+            Tamil= True
+
+        Customer.objects.create(name=name,mob=phone,English=English,Kannada=Kannada,Hindi=Hindi,Telugu=Telugu,Tamil=Tamil)
+        return HttpResponse('DATA IS STORED')
+
+
+    return render(request,'customer.html')

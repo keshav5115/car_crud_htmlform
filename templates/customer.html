@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form  method="post">
+        {% csrf_token %}
+        <div>
+        <label for="name">customer name</label>
+        <input type="text" id="name" name="name">
+        </div>
+        <div>
+            <label for="phone">customer phone number</label>
+            <input type="text" id="phone" name="phone">
+        </div>
+        <div>
+            <label >Known Languages</label>
+            
+            <label for="English">English</label>
+            <input type="checkbox" name="English" id="English">
+            <label for="Kannada">Kannada</label>
+            <input type="checkbox" name="Kannada" id="Kannada">
+            <label for="Hindi">Hindi</label>
+            <input type="checkbox" name="Hindi" id="Hindi">
+            <label for="Telugu">Telugu</label>
+            <input type="checkbox" name="Telugu" id="Telugu">
+            <label for="Tamil">Tamil</label>
+            <input type="checkbox" name="Tamil" id="Tamil">
+        </div>
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>
